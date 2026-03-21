@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HERO BACKGROUND */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url(https://i.pinimg.com/1200x/b0/e0/fc/b0e0fc49adc32d7bf3e4b2ff3e13ea8c.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: moveBg 60s linear infinite alternate;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+}
+
+@keyframes moveBg {
+    0% { background-position: center top; }
+    100% { background-position: center bottom; }
+}
+
+/* PAGE CONTAINER: TWO COLUMNS */
+.page-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    flex: 1;
+}
+
+/* LEFT COLUMN: HERO TEXT */
+.left-column {
+    flex: 1;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.left-column div {
+    font-size: 80px;
+    font-weight: bolder;
+    line-height: 0.95;
+    margin-bottom: 10px;
+}
+
+.identity {
+    border-left: 6px solid #E07A5F;
+    padding-left: 10px;
+    display: inline-block;
+}
+
+.dot {
+    color: #E07A5F;
+}
+
+/* RIGHT COLUMN: BOX GRID */
+.right-column {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2x2 grid */
+    grid-gap: 20px;
+}
+
+/* BOX STYLING WITH STAGGERED POP-UP ANIMATION */
+.box {
+   
+   padding: 30px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: white;
+
+
+  opacity: 0;
+  transform: scale(0.8);
+
+  /* Animation */
+  animation: popUp 0.5s ease forwards;
+}
+
+
+.box:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.box:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.box:nth-child(3) {
+  animation-delay: 1.0s;
+}
+.box:nth-child(4) {
+  animation-delay: 1.4s;
+}
+
+/* Pop-up keyframes */
+@keyframes popUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Hover effect for interactivity */
+.box:hover {
+  transform: scale(1.08);          
+  box-shadow: 0 8px 20px rgba(224, 122, 95, 0.6); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  cursor: pointer;
+}
+.box:hover span {
+  transform: scale(1.2);           
+  transition: transform 0.3s ease;
+  display: inline-block;           
+}
+.cta {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #E07A5F;
+    cursor: pointer;
+}
+
+/* Base CTA styling */
+.cta {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #E07A5F;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  user-select: none; 
+}
+
+/* Hover effect */
+
+.back-p2 {
+  position: absolute;
+  left: 2%;
+  top: 80%;
+  transform: translateY(-50%) rotate(180deg);
+
+  writing-mode: vertical-rl;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 4px;
+
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.back-p2:hover {
+  color: #FF6B35;
+  letter-spacing: 6px;
+}
+/* ===== CLEAN NEON HOVER ===== */
+
+.cta {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  letter-spacing: 3px;
+
+  color: #E07A5F;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+}
+
+/* NEON HOVER */
+.cta:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 5px #FF6B35,
+    0 0 10px #FF6B35,
+    0 0 20px #FF6B35,
+    0 0 40px #FF6B35;
+}
+.cta:hover {
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+@keyframes neonPulse {
+  from {
+    text-shadow:
+      0 0 5px #FF6B35,
+      0 0 10px #FF6B35;
+  }
+  to {
+    text-shadow:
+      0 0 20px #FF6B35,
+      0 0 40px #FF6B35;
+  }
+}
+.box {
+  background: rgba(28, 36, 51, 0.35); 
+  backdrop-filter: blur(1px);
+}

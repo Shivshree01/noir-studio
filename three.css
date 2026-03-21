@@ -1,0 +1,308 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* PAGE BACKGROUND */
+body {
+ background-image: url(https://i.pinimg.com/736x/88/40/33/884033d32914043fd1bca590792a9bb0.jpg) ;
+  overflow: hidden;
+   background-size: cover ;
+  background-position: 50% center;
+}
+
+/* MAIN CONTAINER */
+.page3 {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+
+
+.vertical-column {
+  width: 20%;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+  opacity: 0.6;
+}
+
+.ticker {
+  display: flex;
+  flex-direction: column;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  animation: scrollText 50s linear infinite;
+}
+
+.ticker p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: white;
+}
+
+/* seamless scroll */
+@keyframes scrollText {
+  0% { transform: rotate(180deg) translateY(0); }
+  100% { transform: rotate(180deg) translateY(-50%); }
+}
+
+/* ---------------- HERO TEXT ---------------- */
+
+.hero-p3 {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 12%;
+}
+
+.hero-p3 h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  line-height: 0.9;
+  position: relative;
+}
+
+/* WE MAKE */
+.small {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  color: #8F9EB9;
+}
+
+/* EXPERIENCES */
+.capitalized {
+  display: block;
+  font-size: 7rem;
+  color: #FF6B35;
+  position: relative;
+}
+
+/* that (overlapping) */
+.small-cursive {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 2rem;
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ffffff;
+  text-transform: lowercase;
+}
+
+/* RESOUND */
+.bold {
+  display: block;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+
+
+.contact-info {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 22%;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  line-height: 2.1;
+
+  color: #1c2433;
+}
+
+/* ORANGE SIDE LINE (structure without box) */
+.contact-info::before {
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: 5%;
+  width: 3px;
+  height: 85%;
+  background: #FF6B35;
+}
+
+/* FAINT BACKGROUND TEXT (depth) */
+.contact-info::after {
+  content: "CONTACT";
+  position: absolute;
+  right: -40px;
+  top: 10%;
+
+  writing-mode: vertical-rl;
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  letter-spacing: 4px;
+
+  color: rgba(0, 0, 0, 0.05);
+
+  pointer-events: none;
+}
+
+/* NOIR STUDIO TITLE */
+.contact-info .studio {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  color: #FF6B35;
+
+  margin-bottom: 25px;
+}
+
+/* NORMAL TEXT */
+.contact-info .line {
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+/* IMPORTANT TEXT */
+.contact-info .highlight {
+  color: #1c2433;
+  font-weight: 600;
+}
+
+/* EMAIL + LINKS */
+.contact-info a {
+  color: #FF6B35;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+
+/* subtle underline */
+.contact-info a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: #FF6B35;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+/* hover effect */
+.contact-info a:hover::after {
+  opacity: 1;
+  transform: scaleX(1.05);
+}
+
+/* SOCIAL LINKS */
+.socials {
+  display: flex;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.socials a {
+  font-size: 0.9rem;
+  color: #374151;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #FF6B35;
+  transform: translateY(-2px);
+}
+
+.back-p3 {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+/* underline animation */
+.back-p3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #FF6B35;
+  transition: 0.3s;
+}
+
+/* hover */
+.back-p3:hover {
+  color: #FF6B35;
+  letter-spacing: 5px;
+}
+
+.back-p3:hover::after {
+  width: 100%;
+}
+
+
+.glitch {
+  position: relative;
+  color: #ffffff;
+}
+
+/* layers */
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+/* ORANGE (more visible shift) */
+.glitch::before {
+  color: #FF6B35;
+  z-index: -1;
+  animation: glitchTop 0.6s infinite steps(2);
+}
+
+/* BLUE (opposite movement) */
+.glitch::after {
+  color: #60A5FA;
+  z-index: -2;
+  animation: glitchBottom 0.6s infinite steps(2);
+}
+
+@keyframes glitchTop {
+  0%   { transform: translate(0,0); }
+  20%  { transform: translate(-3px,-2px); }
+  40%  { transform: translate(3px,2px); }
+  60%  { transform: translate(-2px,1px); }
+  80%  { transform: translate(2px,-1px); }
+  100% { transform: translate(0,0); }
+}
+
+@keyframes glitchBottom {
+  0%   { transform: translate(0,0); }
+  20%  { transform: translate(3px,2px); }
+  40%  { transform: translate(-3px,-2px); }
+  60%  { transform: translate(2px,-1px); }
+  80%  { transform: translate(-2px,1px); }
+  100% { transform: translate(0,0); }
+}
